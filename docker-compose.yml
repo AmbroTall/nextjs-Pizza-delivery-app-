@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    image: nextjs-docker #name of our image
+    build: . #build this current directory
+    ports:
+      - "3000:3000" #port to run server|container
+    volumes:   # refreshing server (fast refreshdocker)
+      - ./pages:/app/pages
+      - ./public:/app/public
+      - ./styles:/app/styles
